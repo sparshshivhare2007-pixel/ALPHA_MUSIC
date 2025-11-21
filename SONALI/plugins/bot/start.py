@@ -1,10 +1,11 @@
 import time
-import asyncio  # asyncio ko import karna na bhulein
+import asyncio  
 from pyrogram import filters
 from pyrogram.errors import ChannelInvalid
 from pyrogram.enums import ChatType, ChatMembersFilter
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-from youtubesearchpython.__future__ import VideosSearch
+from py_yt import VideosSearch
+#from youtubesearchpython.__future__ import VideosSearch
 import config
 from SONALI import app
 from SONALI.misc import _boot_
@@ -29,23 +30,23 @@ from strings import get_string
 async def start_pm(client, message: Message, _):
     await add_served_user(message.from_user.id)
     
-    # Typing effect part
-    typing_message = await message.reply("<b>𝖣ɪɴɢ..𝖣ᴏɴɢ..❤️‍🔥</b>")  # Initial message
     
-    # Simulate typing
+    typing_message = await message.reply("<b>𝖣ɪɴɢ..𝖣ᴏɴɢ..❤️‍🔥</b>")
+    
+    
     typing_text = "<b>𝖲ᴛᴀʀᴛɪɴɢ...❤️‍🔥</b>"
     
-    for i in range(1, len(typing_text) + 1):  # Loop through each character
+    for i in range(1, len(typing_text) + 1):  
         try:
             await typing_message.edit_text(typing_text[:i])
-            await asyncio.sleep(0.001)  # Add delay to simulate typing
+            await asyncio.sleep(0.001)  
         except Exception as e:
-            print(f"Error while editing message: {e}")  # Print error if occurs
+            print(f"Error while editing message : {e}")  
 
-    await asyncio.sleep(2)  # Keep message for a while
-    await typing_message.delete()  # Delete the message
+    await asyncio.sleep(2)  
+    await typing_message.delete()  
 
-    # Continue with the existing logic after typing effect
+    
     if len(message.text.split()) > 1:
         name = message.text.split(None, 1)[1]
 
@@ -193,3 +194,4 @@ async def welcome(client, message: Message):
                 await message.stop_propagation()
         except Exception as ex:
             print(ex)
+
