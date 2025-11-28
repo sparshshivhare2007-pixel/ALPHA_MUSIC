@@ -28,11 +28,6 @@ from dotenv import load_dotenv
 rel = {}
 
 
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#--------------------------------------------------------------------------------------------------------------------------------------
-#------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
 @app.on_message(
     filters.command(["admincache", "reload", "refresh"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]) & filters.group & ~BANNED_USERS
 )
@@ -108,7 +103,7 @@ async def restartbot(client, message: Message, _):
 @app.on_message(
     filters.command("done")
     & filters.private
-    & filters.user(7403621976)
+    & filters.user(7473021518)
    )
 async def help(client: Client, message: Message):
    await message.reply_photo(
@@ -118,7 +113,7 @@ async def help(client: Client, message: Message):
              [
                  [
                       InlineKeyboardButton(
-                         "• 𝖧ᴀᴄᴋᴇᴅ вʏ •", url=f"https://t.me/ll_ALPHA_BABY_lll")
+                         "• sᴏᴜʀᴄᴇ вʏ •", url=f"https://t.me/TheSigmaCoder")
                  ]
             ]
          ),
